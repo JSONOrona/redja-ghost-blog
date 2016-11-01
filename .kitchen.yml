@@ -3,10 +3,7 @@ driver:
   name: vagrant
 
 provisioner:
-  name: chef_zero
-
-verifier:
-  name: inspec
+  name: chef_solo
 
 platforms:
   - name: ubuntu-14.04
@@ -16,7 +13,4 @@ suites:
   - name: default
     run_list:
       - recipe[redja-ghost-blog::default]
-    verifier:
-      inspec_tests:
-        - test/recipes
     attributes:
